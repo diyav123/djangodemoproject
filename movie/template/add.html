@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="mb-3">
+        <label class="form-label">NAME:</label>
+        <input type="text" class="form-control" name="n" placeholder="enter the name">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">YEAR:</label>
+        <input type="number" class="form-control" name="y" placeholder="enter the year">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">GENRE:</label>
+        <input type="text" class="form-control" name="g" placeholder="enter the genre">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">RATING:</label>
+        <input type="number" class="form-control" name="r" placeholder="enter your rating">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">IMAGE:</label>
+        <input type="file" class="form-control" name="i">
+    </div>
+<div class="mb-3">
+    <input type="submit" class="form-control">
+  </div>
+</form>
+
+{% endblock %}

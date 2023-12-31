@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+
+<div class="card bg-white mt-4 ms-4" style="max-width: 540px;">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img src="{{c.image.url}}" class="img-fluid rounded-start" alt="..." height="500px" width="100%">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">{{c.name}}</h5>
+        <h6 class="card-text">{{c.year}}</h6>
+          <p class="card-text">{{c.genre}}</p>
+        <h6 class="card-text"><small class="text-muted" ><i class="fa-solid fa-star"></i>{{c.rating}}/10</small></h6>
+          <a href="{% url 'app:editby1' c.id %}" class="btn btn-danger">EDIT</a>
+          <a href="{% url 'app:deleteby1' c.id %}" class="btn btn-danger">DELETE</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
